@@ -1,0 +1,297 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #000;
+}
+
+body {
+  
+}
+
+.header {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #fff;
+}
+
+.onglets { /* onglets en haut à gauche des pages*/
+    border: 2px solid #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    margin: 20px;
+    padding: 0px 10px;
+    font-weight: 700;
+    font-size: 1.1em;
+    line-height: 1;
+    box-sizing: border-box;
+    height: 40px;
+    animation: fadeInTranslate 1s ease-out; /* Appliquer l'animation */
+}
+
+.sides, .info {
+    flex: 0 0 auto;
+}
+
+.sides a {
+    color: #eee
+}
+
+    .sides a:not(.active):hover {
+        opacity: 0.7;
+    }
+
+
+.info {
+    width: 100%;
+    padding: 3% 10% 2% 10%;
+    text-align: center;
+    text-shadow: 0 2px 3px rgba(0,0,0,0.2);
+    animation: fadeInTranslate 1s ease-out; /* Appliquer l'animation */
+}
+
+.meta {
+    font-style: italic;
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+.presentation {
+    max-width: 1600px;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeInTranslate 1s ease-out; /* Appliquer l'animation */
+}
+
+
+
+.collection-container, .titre-collection {
+    max-width: 1800px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    animation: fadeInTranslate 0.5s ease-out; /* Appliquer l'animation */
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 400px;
+    margin: 25px;
+    border-radius: 20px ;
+    box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.2), 0 10px 30px 0 rgba(255, 255, 255, 0.19); /* Ajout de l'ombre */
+}
+
+    .video-container:hover {
+        animation: survol 1s ease;
+    }
+
+.video-div {
+    display: flex;
+    flex-direction: column;
+}
+
+video {
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    height: 225px;
+    object-fit: cover;
+}
+
+.detail-video {
+    height: 175px;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+}
+
+    .detail-video h2 {
+        margin: 0;
+        background-color: black;
+        color: white;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.9);
+    }
+
+    .detail-video h2, p {
+        padding-inline: 10px;
+    }
+
+.menu-burger {
+    display: block;
+    width: 40px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    text-decoration: none
+}
+
+    .menu-burger:after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 3px;
+        background: #fff;
+        position: absolute;
+        margin: 0 auto;
+        top: 5px;
+        left: 0;
+        right: 0;
+        box-shadow: 0 8px, 0 16px;
+    }
+
+
+.author {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: url(assets/images/imagevince2.jpg) center no-repeat;
+    background-size: cover;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    margin-bottom: 3px
+}
+
+.menu-burger {
+    cursor: pointer;
+    /* Ajoutez d'autres styles pour le bouton burger */
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    max-width: 200px;
+    background-color: black; /* Ajustez la couleur de fond selon vos besoins */
+    z-index: 1000; /* Assurez-vous que le menu dropdown est au-dessus des autres éléments */
+    animation: fadeInTranslateY 1s; /* Appliquer l'animation */
+}
+
+.dropdown-onglets {
+    display: block;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    align-items: center;
+    align-content: center;
+    margin: 20px;
+    padding: 0px 10px;
+    font-weight: 700;
+    font-size: 1.1em;
+    line-height: 1;
+    box-sizing: border-box;
+    height: 40px;
+    background-color: white;
+}
+
+    .dropdown-onglets a {
+        color: black;
+    }
+
+    .dropdown-onglets:hover {
+        opacity: 0.7; /* Ajoutez un effet de survol */
+    }
+
+@keyframes survol {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.05); 
+        box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.4), 0 10px 30px 0 rgba(255, 255, 255, 0.39); /* Ajout de l'ombre */
+    }
+}
+
+
+@keyframes fadeInTranslate {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInTranslateY {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.video-controls {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+    .video-controls.fade-in {
+        animation-name: fadeIn;
+    }
+
+    .video-controls.fade-out {
+        animation-name: fadeOut;
+    }
+
+    @media screen and (max-width: 600px) {
+        .onglets {
+            display: none;
+        }
+
+        .header, .dropdown-menu {
+            margin: 70px 0 0 0;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 300px;
+            margin : 50px 10px;
+            background-color: aqua;
+        }
+
+        video {
+            height: 200px;
+        }
+
+    }
