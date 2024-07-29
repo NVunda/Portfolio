@@ -10,7 +10,7 @@ const Navbar = () => {
         { text: 'FILMS', to: "CollectionFilm" },
         { text: 'MARIAGES', to: "CollectionMariage" },
         { text: 'DIVERS', to: "CollectionDivers" },
-        { text: 'CONTACTS', to: "CollectionDivers" }
+        { text: 'CONTACTS', to: "Contacts" }
     ];
 
     const toggleMenu = () => {
