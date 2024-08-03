@@ -275,7 +275,11 @@ video {
     }
 
     @media screen and (max-width: 600px) {
-        .onglets {
+        .titre-collection {
+            max-width: 300px;
+            margin: 0 5px;
+        }
+            .onglets {
             display: none;
         }
 
