@@ -90,12 +90,12 @@ h1 {
     height: 400px;
     width: 400px;
     margin: 25px;
-    border-radius: 20px ;
+    border-radius: 20px;
     box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.2), 0 10px 30px 0 rgba(255, 255, 255, 0.19); /* Ajout de l'ombre */
 }
 
     .video-container:hover {
-        animation: survol 1s ease;
+         animation: survol 1s forwards;
     }
 
 .video-div {
@@ -129,31 +129,8 @@ video {
     }
 
 .menu-burger {
-    display: block;
-    width: 40px;
-    height: 30px;
-    border: 2px solid #fff;
-    border-radius: 3px;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    text-decoration: none
+    display: none;
 }
-
-    .menu-burger:after {
-        content: "";
-        display: block;
-        width: 20px;
-        height: 3px;
-        background: #fff;
-        position: absolute;
-        margin: 0 auto;
-        top: 5px;
-        left: 0;
-        right: 0;
-        box-shadow: 0 8px, 0 16px;
-    }
-
 
 .author {
     display: inline-block;
@@ -212,6 +189,11 @@ video {
 
     50% {
         transform: scale(1.05); 
+        box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.4), 0 10px 30px 0 rgba(255, 255, 255, 0.39); /* Ajout de l'ombre */
+    }
+
+    100% {
+        transform: scale(1.05);
         box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.4), 0 10px 30px 0 rgba(255, 255, 255, 0.39); /* Ajout de l'ombre */
     }
 }
@@ -284,7 +266,7 @@ video {
         }
 
         .header, .dropdown-menu {
-            margin: 70px 0 0 0;
+            margin: 0;
         }
 
         .video-container {
@@ -297,6 +279,32 @@ video {
         video {
             height: 200px;
         }
+
+        .menu-burger {
+            display: block;
+            width: 40px;
+            height: 30px;
+            border: 2px solid #fff;
+            border-radius: 3px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            text-decoration: none
+        }
+
+            .menu-burger:after {
+                content: "";
+                display: block;
+                width: 20px;
+                height: 3px;
+                background: #fff;
+                position: absolute;
+                margin: 0 auto;
+                top: 5px;
+                left: 0;
+                right: 0;
+                box-shadow: 0 8px, 0 16px;
+            }
 
     }
 
