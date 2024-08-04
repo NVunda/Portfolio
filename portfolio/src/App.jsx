@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Contacts from './Components/Contacts';
 import CollectionDivers from './Components/CollectionDivers';
 import CollectionFilm from './Components/CollectionFilm';
 import CollectionMariage from './Components/CollectionMariage';
@@ -15,7 +16,8 @@ const App = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="/CollectionFilm" element={<CollectionFilm />} />
               <Route path="/CollectionMariage" element={<CollectionMariage />} />
-              <Route path="/CollectionDivers" element={<CollectionDivers />} />
+                <Route path="/CollectionDivers" element={<CollectionDivers />} />
+                <Route path="/Contacts" element={<Contacts />} />
           </Routes>
     </Router>
   )
