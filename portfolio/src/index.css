@@ -74,11 +74,17 @@ h1 {
     animation: fadeInTranslate 1s ease-out; /* Appliquer l'animation */
 }
 
-
-
-.collection-container, .titre-collection {
+.collection-container {
     max-width: 1800px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    animation: fadeInTranslate 0.5s ease-out; /* Appliquer l'animation */
+}
+
+.titre-collection {
+    max-width: 1800px;
+    margin: 0 25px;
     display: flex;
     flex-wrap: wrap;
     animation: fadeInTranslate 0.5s ease-out; /* Appliquer l'animation */
