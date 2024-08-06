@@ -13,13 +13,14 @@ const CollectionFilm = () => {
         <div>
             <h1 className="titre-collection">Collection Film</h1>
             <div className="collection-container">
-                {videoUrls.map(({ url, title, description, miniature }, index) => (
+                {videoUrls.map(({ url, title, description, miniature, orientation }, index) => (
                     <div key={index} className="video-container">
                     <Video
-                         url={url}
-                         title={title}
-                         description={description}
-                         miniature={miniature}
+                        url={url}
+                        title={title}
+                        description={description}
+                        miniature={miniature}
+                        orientation={orientation}
                     />
                     </div>
                 ))

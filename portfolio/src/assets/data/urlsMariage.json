@@ -3,31 +3,36 @@
     "url": "src/assets/videos/mariage/lesmarieesdevalentine.mp4",
     "title": "Les Mariees de Valentine",
     "description": "La Flaime a ete creeee par un groupe de passionnes de la video de mariage",
-    "miniature": "src/assets/images/lesmarieesdevalentine.JPG"
+    "miniature": "src/assets/images/lesmarieesdevalentine.JPG",
+    "orientation": "landscape"
   },
   {
     "url": "src/assets/videos/mariage/weddingteaser1.mp4",
     "title": "Mariage 1",
     "description": "La Flaime a ete creeee par un groupe de passionnes de la video de mariageLa Flaime a ete creeee par un groupe de passionnes de la video de mariage",
-    "miniature": "src/assets/images/mariage1.JPG"
+    "miniature": "src/assets/images/mariage1.JPG",
+    "orientation": "landscape"
   },
   {
     "url": "src/assets/videos/mariage/weddingteaser2.mp4",
     "title": "Mariage 2",
     "description": "La Flaime a ete creeee par un groupe de passionnes de la video de mariage",
-    "miniature": "src/assets/images/mariage2b.JPG"
+    "miniature": "src/assets/images/mariage2b.JPG",
+    "orientation": "landscape"
   },
   {
     "url": "src/assets/videos/mariage/weddingteaser3.mp4",
     "title": "Mariage 3",
     "description": "La Flaime a ete creeee par un groupe de passionnes de la video de mariage",
-    "miniature": "src/assets/images/mariage3a.JPG"
+    "miniature": "src/assets/images/mariage3a.JPG",
+    "orientation": "landscape"
   },
   {
     "url": "src/assets/videos/mariage/weddingteaser4.mp4",
     "title": "Mariage 4",
     "description": "La Flaime a ete creeee par un groupe de passionnes de la video de mariage",
-    "miniature": "src/assets/images/mariage4.JPG"
+    "miniature": "src/assets/images/mariage4.JPG",
+    "orientation": "landscape"
   }
 
 ]

@@ -105,11 +105,19 @@ h1 {
 
 video {
     border-radius: 20px 20px 0 0;
-    width: 100%;
-    height: 225px;
     object-fit: cover;
     background-color: black; /*temporaire*/
 }
+
+    .video-div.landscape .video {
+        width: 100%;
+        height: 225px;
+    }
+
+    .video-div.portrait .video {
+        width: auto;
+        height: 100%;
+    }
 
 .detail-video {
     height: auto;

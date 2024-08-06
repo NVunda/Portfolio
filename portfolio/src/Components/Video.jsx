@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const Video = ({ url, title, description, miniature }) => {
+const Video = ({ url, title, description, miniature, orientation }) => {
 
     const [showControls, setShowControls] = useState(false);
     useEffect(() => {
@@ -16,7 +16,7 @@ const Video = ({ url, title, description, miniature }) => {
     }, []);
 
     return (
-        <div className="video-div">
+        <div className={`video-div ${orientation}`}>
             <video poster={miniature}
                 controls={showControls}
                 className={`video ${showControls ? 'fade-in' : 'fade-out'}`}

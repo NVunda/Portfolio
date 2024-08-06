@@ -3,30 +3,35 @@
     "url": "src/assets/videos/divers/BlueMoon.mp4",
     "title": "Blue Moon",
     "description": "La Flaime a ete creeee par un groupe de passionnes de la video de mariage",
-    "miniature": "src/assets/images/BlueMoon.JPG"
+    "miniature": "src/assets/images/BlueMoon.JPG",
+    "orientation": "landscape"
   },
   {
     "url": "src/assets/videos/divers/ricard.mp4",
     "title": "Ricard",
     "description": "La Flaime a ete creeee par un groupe de passionnes de la video de mariage",
-    "miniature": "src/assets/images/Ricard.JPG"
+    "miniature": "src/assets/images/Ricard.JPG",
+    "orientation": "landscape"
   },
   {
     "url": "src/assets/videos/divers/SlowFashion.mp4",
     "title": "Slow Fashion",
     "description": "La Flaime a ete creeee par un groupe de passionnes de la video de mariage",
-    "miniature": "src/assets/images/SlowFashion.JPG"
+    "miniature": "src/assets/images/SlowFashion.JPG",
+    "orientation": "landscape"
   },
   {
     "url": "src/assets/videos/divers/sofitel.mp4",
     "title": "Sofitel",
     "description": "La Flaime a ete creeee par un groupe de passionnes de la video de mariage",
-    "miniature": "src/assets/images/sofitel.JPG"
+    "miniature": "src/assets/images/sofitel.JPG",
+    "orientation": "landscape"
   },
   {
     "url": "src/assets/videos/divers/sport.mp4",
     "title": "Sport",
     "description": "La Flaime a ete creeee par un groupe de passionnes de la video de mariage",
-    "miniature": "src/assets/images/sport.JPG"
+    "miniature": "src/assets/images/sport.JPG",
+    "orientation": "portrait"
   }
 ]
