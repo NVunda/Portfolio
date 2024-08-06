@@ -1,10 +1,45 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 const Contacts = () => {
-   
+
+    const nameInput = useRef(null);
+    const emailInput = useRef(null);
+    const phoneInput = useRef(null);
+    const messageInput = useRef(null);
+
+    const focusFunc = (e) => {
+        let parent = e.target.parentNode;
+        parent.classList.add("focus");
+    };
+
+    const blurFunc = (e) => {
+        let parent = e.target.parentNode;
+        if (e.target.value === "") {
+            parent.classList.remove("focus");
+        }
+    };
+
+    useEffect(() => {
+        const inputs = [nameInput.current, emailInput.current, phoneInput.current, messageInput.current];
+        inputs.forEach((input) => {
+            if (input) {
+                input.addEventListener("focus", focusFunc);
+                input.addEventListener("blur", blurFunc);
+            }
+        });
+
+        return () => {
+            inputs.forEach((input) => {
+                if (input) {
+                    input.removeEventListener("focus", focusFunc);
+                    input.removeEventListener("blur", blurFunc);
+                }
+            });
+        };
+    }, []);
 
     return (
         <div className="contact-form-container">
@@ -56,24 +91,24 @@ const Contacts = () => {
                     <span className="circle two"></span>
 
                     <form action="index.html" autoComplete="off">
-                        <h3 className="title">Contactez-nous</h3>
+                        <h3 className="title">Contact us</h3>
                         <div className="input-container">
-                            <input type="text" name="name" className="input" />
+                            <input ref={nameInput} type="text" name="name" className="input" />
                             <label htmlFor="">Username</label>
                             <span>Username</span>
                         </div>
                         <div className="input-container">
-                            <input type="email" name="email" className="input" />
+                            <input ref={emailInput} type="email" name="email" className="input" />
                             <label htmlFor="">Email</label>
                             <span>Email</span>
                         </div>
                         <div className="input-container">
-                            <input type="tel" name="phone" className="input" />
+                            <input ref={phoneInput} type="tel" name="phone" className="input" />
                             <label htmlFor="">Phone</label>
                             <span>Phone</span>
                         </div>
                         <div className="input-container textarea">
-                            <textarea name="message" className="input"></textarea>
+                            <textarea ref={messageInput} name="message" className="input"></textarea>
                             <label htmlFor="">Message</label>
                             <span>Message</span>
                         </div>
