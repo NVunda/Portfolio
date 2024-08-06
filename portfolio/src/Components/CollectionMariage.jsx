@@ -1,42 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Video from './Video';
-
+import videoUrlsData from '../assets/data/urlsMariage.json';
 
 const CollectionMariage = () => {
+    const [videoUrls, setVideoUrls] = useState([]);
 
-    const videoUrls = [
-        {
-            url: 'src/assets/videos/mariage/lesmarieesdevalentine.mp4',
-            title: 'Les Mariees de Valentine',
-            description: 'La Flaime a ete creeee par un groupe de passionnes de la video de mariage',
-            miniature: 'src/assets/images/lesmarieesdevalentine.JPG'
-        },
-        {
-            url: 'src/assets/videos/mariage/weddingteaser1.mp4',
-            title: 'Mariage 1',
-            description: 'La Flaime a ete creeee par un groupe de passionnes de la video de mariage',
-            miniature: 'src/assets/images/mariage1.JPG',
-        },
-        {
-            url: 'src/assets/videos/mariage/weddingteaser2.mp4',
-            title: 'Mariage 2',
-            description: 'La Flaime a ete creeee par un groupe de passionnes de la video de mariage',
-            miniature: 'src/assets/images/mariage2b.JPG',
-        },
-        {
-            url: 'src/assets/videos/mariage/weddingteaser3.mp4',
-            title: 'Mariage 3',
-            description: 'La Flaime a ete creeee par un groupe de passionnes de la video de mariage',
-            miniature: 'src/assets/images/mariage3a.JPG',
-        },
-        {
-            url: 'src/assets/videos/mariage/weddingteaser4.mp4',
-            title: 'Mariage 4',
-            description: 'La Flaime a ete creeee par un groupe de passionnes de la video de mariage',
-            miniature: 'src/assets/images/mariage4.JPG',
-        }
-        
-    ];
+    useEffect(() => {
+        setVideoUrls(videoUrlsData);
+    }, []);
 
     return (
         <div>

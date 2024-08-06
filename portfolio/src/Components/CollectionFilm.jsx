@@ -1,29 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Video from './Video';
-
+import videoUrlsData from '../assets/data/urlsFilm.json';
 
 const CollectionFilm = () => {
+    const [videoUrls, setVideoUrls] = useState([]);
 
-    const videoUrls = [
-        {
-            url: 'src/assets/videos/film/LAFLAIME.mp4',
-            title: 'La Flaime',
-            description: 'Un spot publicitaire pour la marque de vetements eponyme, mettant en avant une philosophie de savoir-faire et la capacite de tout transformer en energie positive.',
-            miniature: 'src/assets/images/LAFLAIME.JPG'
-        },
-        {
-            url: 'src/assets/videos/film/MABOUTEILLE.mp4',
-            title: 'Ma Bouteille',
-            description: 'Une plongee poignante dans les meandres des problemes qui menent certains a la dependance toxique.',
-            miniature: 'src/assets/images/mabouteille.JPG'
-        },
-        {
-            url: 'src/assets/videos/film/Ganvie.mp4',
-            title: 'Ganvie entre eau et terre',
-            description: 'une ode a la beaute et aux defis de la vie quotidienne dans les villages lacustres',
-            miniature: 'src/assets/images/ganvie.JPG'
-        }
-    ];
+    useEffect(() => {
+        setVideoUrls(videoUrlsData);
+    }, []);
 
     return (
         <div>
