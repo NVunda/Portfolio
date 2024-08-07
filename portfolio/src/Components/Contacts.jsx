@@ -87,9 +87,6 @@ const Contacts = () => {
                 </div>
 
                 <div className="contact-form">
-                    <span className="circle one"></span>
-                    <span className="circle two"></span>
-
                     <form action="index.html" autoComplete="off">
                         <h3 className="title">Contact us</h3>
                         <div className="input-container">
