@@ -70,7 +70,7 @@ const Contacts = () => {
         }
 
         if (!validatePhone(phone)) {
-            setPhoneError('Numéro de téléphone invalide');
+            setPhoneError('NumÃ©ro de tÃ©lÃ©phone invalide');
             valid = false;
         } else {
             setPhoneError('');

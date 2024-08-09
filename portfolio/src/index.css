@@ -43,7 +43,7 @@ body {
         margin: 0;
     }
 
-.onglets { /* onglets en haut à gauche des pages*/
+.onglets { /* onglets en haut Ã  gauche des pages*/
     border: 2px solid #fff;
     border-radius: 3px;
     text-decoration: none;
@@ -112,9 +112,9 @@ h1 {
 }
 
     .collection-container.portrait {
-        flex-wrap: nowrap; /* Empêche le retour à la ligne */
-        overflow-x: auto; /* Ajoute un défilement horizontal */
-        scrollbar-width: none; /* Masque la barre de défilement pour Firefox */
+        flex-wrap: nowrap; /* EmpÃªche le retour Ã  la ligne */
+        overflow-x: auto; /* Ajoute un dÃ©filement horizontal */
+        scrollbar-width: none; /* Masque la barre de dÃ©filement pour Firefox */
     }
 
 .scroll-arrow {
@@ -150,8 +150,8 @@ h1 {
 }
 
 .collection-container.portrait .video-container {
-    flex: 0 0 auto; /* Empêche les conteneurs de changer de taille */
-    width: 300px; /* Ajuste la largeur des vidéos en mode portrait */
+    flex: 0 0 auto; /* EmpÃªche les conteneurs de changer de taille */
+    width: 300px; /* Ajuste la largeur des vidÃ©os en mode portrait */
 }
 
 .video-container:hover {
@@ -296,7 +296,7 @@ video {
         right: 0;
         max-width: 200px;
         background-color: black; /* Ajustez la couleur de fond selon vos besoins */
-        z-index: 2000; /* Assurez-vous que le menu dropdown est au-dessus des autres éléments */
+        z-index: 2000; /* Assurez-vous que le menu dropdown est au-dessus des autres Ã©lÃ©ments */
         animation: fadeInTranslateY 1s; /* Appliquer l'animation */
         border-radius: 10px;
     }
