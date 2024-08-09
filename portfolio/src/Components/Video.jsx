@@ -1,23 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 const Video = ({ url, title, description, miniature, orientation }) => {
-
     const [showControls, setShowControls] = useState(false);
+    const videoRef = useRef(null);
+
     useEffect(() => {
-        const iframes = document.querySelectorAll('.video-div video');
-        iframes.forEach(iframe => {
-            iframe.addEventListener('load', () => {
-                const video = iframe.contentWindow.document.querySelector('video');
-                if (video) {
-                    video.pause();
+        const videoElement = videoRef.current;
+
+        const handleIntersection = (entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    videoElement.pause();
                 }
             });
+        };
+
+        const observer = new IntersectionObserver(handleIntersection, {
+            threshold: 0.25 // Ajustez ce seuil selon vos besoins
         });
+
+        if (videoElement) {
+            observer.observe(videoElement);
+        }
+
+        return () => {
+            if (videoElement) {
+                observer.unobserve(videoElement);
+            }
+        };
     }, []);
 
     return (
         <div className={`video-div ${orientation}`}>
-            <video poster={miniature}
+            <video
+                ref={videoRef}
+                poster={miniature}
                 controls={showControls}
                 className={`video ${showControls ? 'fade-in' : 'fade-out'}`}
                 onMouseEnter={() => setShowControls(true)}
@@ -29,7 +46,7 @@ const Video = ({ url, title, description, miniature, orientation }) => {
                 <p>{description}</p>
             </div>
         </div>
-    )
+    );
 }
 
 export default Video;

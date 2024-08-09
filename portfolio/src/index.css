@@ -8,19 +8,40 @@
 }
 
 body {
-  
 }
 
 .header {
+    position: relative;
+    overflow: hidden;
+    height: 50%; /* Ajustez la hauteur selon vos besoins */
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    border-radius: 20px;
+}
+
+.header-content {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     flex-wrap: wrap;
+    z-index: 1;
     color: #fff;
     padding: 3% 10% 2% 10%;
     text-align: center;
     text-shadow: 0 2px 3px rgba(0,0,0,0.2);
     animation: fadeInTranslate 1s ease-out; /* Appliquer l'animation */
 }
+
+    .header-content h1 {
+        margin: 0;
+    }
 
 .onglets { /* onglets en haut à gauche des pages*/
     border: 2px solid #fff;
@@ -43,28 +64,43 @@ body {
     flex: 0 0 auto;
 }
 
-.sides a {
-    color: #eee
-}
-
-    .sides a:not(.active):hover {
-        opacity: 0.7;
+    .sides a {
+        color: #eee
     }
 
-.meta {
-    font-style: italic;
+        .sides a:not(.active):hover {
+            opacity: 0.7;
+        }
+
+.author {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: url(src/assets/images/author.jpeg) center no-repeat;
+    background-size: cover;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
 }
 
 h1 {
     font-size: 3em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
+}
 
 .presentation {
+    padding: 0px 8px;
     max-width: 1600px;
     margin: 0 auto;
     text-align: center;
     animation: fadeInTranslate 1s ease-out; /* Appliquer l'animation */
+}
+
+.titre-collection {
+    max-width: 1800px;
+    margin: 0 25px;
+    display: flex;
+    flex-wrap: wrap;
+    animation: fadeInTranslate 0.5s ease-out; /* Appliquer l'animation */
 }
 
 .collection-container {
@@ -75,13 +111,32 @@ h1 {
     animation: fadeInTranslate 0.5s ease-out; /* Appliquer l'animation */
 }
 
-.titre-collection {
-    max-width: 1800px;
-    margin: 0 25px;
-    display: flex;
-    flex-wrap: wrap;
-    animation: fadeInTranslate 0.5s ease-out; /* Appliquer l'animation */
+    .collection-container.portrait {
+        flex-wrap: nowrap; /* Empêche le retour à la ligne */
+        overflow-x: auto; /* Ajoute un défilement horizontal */
+        scrollbar-width: none; /* Masque la barre de défilement pour Firefox */
+    }
+
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
 }
+
+    .scroll-arrow.left {
+        left: 10px;
+    }
+
+    .scroll-arrow.right {
+        right: 10px;
+    }
 
 .video-container {
     display: flex;
@@ -94,9 +149,14 @@ h1 {
     box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.2), 0 10px 30px 0 rgba(255, 255, 255, 0.19); /* Ajout de l'ombre */
 }
 
-    .video-container:hover {
-         animation: survol 1s forwards;
-    }
+.collection-container.portrait .video-container {
+    flex: 0 0 auto; /* Empêche les conteneurs de changer de taille */
+    width: 300px; /* Ajuste la largeur des vidéos en mode portrait */
+}
+
+.video-container:hover {
+    animation: survol 1s forwards;
+}
 
 .video-div {
     display: flex;
@@ -109,15 +169,15 @@ video {
     background-color: black; /*temporaire*/
 }
 
-    .video-div.landscape .video {
-        width: 100%;
-        height: 225px;
-    }
+.video-div.landscape .video {
+    width: 100%;
+    height: 225px;
+}
 
-    .video-div.portrait .video {
-        width: auto;
-        height: 100%;
-    }
+.video-div.portrait .video {
+    width: 100%;
+    height: 300px;
+}
 
 .detail-video {
     height: auto;
@@ -141,63 +201,13 @@ video {
     display: none;
 }
 
-.author {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: url(assets/images/imagevince2.jpg) center no-repeat;
-    background-size: cover;
-    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
-    margin-bottom: 3px
-}
-
-.menu-burger {
-    cursor: pointer;
-    /* Ajoutez d'autres styles pour le bouton burger */
-}
-
-.dropdown-menu {
-    position: absolute;
-    right: 0;
-    max-width: 200px;
-    background-color: black; /* Ajustez la couleur de fond selon vos besoins */
-    z-index: 1000; /* Assurez-vous que le menu dropdown est au-dessus des autres éléments */
-    animation: fadeInTranslateY 1s; /* Appliquer l'animation */
-}
-
-.dropdown-onglets {
-    display: block;
-    border: 2px solid #fff;
-    border-radius: 3px;
-    text-decoration: none;
-    align-items: center;
-    align-content: center;
-    margin: 20px;
-    padding: 0px 10px;
-    font-weight: 700;
-    font-size: 1.1em;
-    line-height: 1;
-    box-sizing: border-box;
-    height: 40px;
-    background-color: white;
-}
-
-    .dropdown-onglets a {
-        color: black;
-    }
-
-    .dropdown-onglets:hover {
-        opacity: 0.7; /* Ajoutez un effet de survol */
-    }
-
 @keyframes survol {
     0% {
         transform: scale(1)
     }
 
     50% {
-        transform: scale(1.05); 
+        transform: scale(1.05);
         box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.4), 0 10px 30px 0 rgba(255, 255, 255, 0.39); /* Ajout de l'ombre */
     }
 
@@ -265,56 +275,102 @@ video {
         animation-name: fadeOut;
     }
 
-    @media screen and (max-width: 600px) {
-        .titre-collection {
-            max-width: 300px;
-            margin: 0 5px;
-        }
-            .onglets {
-            display: none;
-        }
-
-        .dropdown-menu {
-            margin: 75px auto;
-        }
-
-        .video-container {
-            width: 100%;
-            margin : 10px 10px;
-            background-color: aqua;
-        }
-
-        video {
-            height: 200px;
-        }
-
-        .menu-burger {
-            display: block;
-            width: 40px;
-            height: 30px;
-            border: 2px solid #fff;
-            border-radius: 3px;
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            text-decoration: none
-        }
-
-            .menu-burger:after {
-                content: "";
-                display: block;
-                width: 20px;
-                height: 3px;
-                background: #fff;
-                position: absolute;
-                margin: 0 auto;
-                top: 5px;
-                left: 0;
-                right: 0;
-                box-shadow: 0 8px, 0 16px;
-            }
-
+@media screen and (max-width: 600px) {
+    .titre-collection {
+        max-width: 300px;
+        margin: 0 5px;
     }
+
+    .header {
+        margin: 75px 0;
+    }
+
+    .onglets, .scroll-arrow {
+        display: none;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        margin: 70px auto;
+        top: 0;
+        right: 0;
+        max-width: 200px;
+        background-color: black; /* Ajustez la couleur de fond selon vos besoins */
+        z-index: 2000; /* Assurez-vous que le menu dropdown est au-dessus des autres éléments */
+        animation: fadeInTranslateY 1s; /* Appliquer l'animation */
+        border-radius: 10px;
+    }
+
+    .dropdown-onglets {
+        display: block;
+        border: 2px solid #fff;
+        border-radius: 3px;
+        text-decoration: none;
+        align-items: center;
+        align-content: center;
+        margin: 20px;
+        padding: 0px 10px;
+        font-weight: 700;
+        font-size: 1.1em;
+        line-height: 1;
+        box-sizing: border-box;
+        height: 40px;
+        background-color: white;
+    }
+
+        .dropdown-onglets a {
+            color: black;
+        }
+
+        .dropdown-onglets:hover {
+            opacity: 0.7; /* Ajoutez un effet de survol */
+        }
+
+    .video-container {
+        width: 100%;
+        margin: 10px 10px;
+        background-color: aqua;
+    }
+
+        .video-container:hover {
+            animation: none;
+        }
+
+    video {
+        height: 200px;
+    }
+
+    .menu-burger {
+        display: block;
+        width: 40px;
+        height: 30px;
+        border: 2px solid #fff;
+        border-radius: 3px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        text-decoration: none
+    }
+
+        .menu-burger:after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 3px;
+            background: #fff;
+            position: absolute;
+            margin: 0 auto;
+            top: 5px;
+            left: 0;
+            right: 0;
+            box-shadow: 0 8px, 0 16px;
+        }
+
+    .menu-burger {
+        cursor: pointer;
+        /* Ajoutez d'autres styles pour le bouton burger */
+    }
+}
 
 /*FORMULAIRE DE CONTACT*/
 
@@ -345,16 +401,16 @@ video {
     position: relative;
 }
 
-.contact-form:before {
-    content: "";
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    background-color: #000;
-    transform: rotate(45deg);
-    top: 50px;
-    left: -13px;
-}
+    .contact-form:before {
+        content: "";
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        background-color: #000;
+        transform: rotate(45deg);
+        top: 50px;
+        left: -13px;
+    }
 
 form {
     padding: 2.3rem 2.2rem;
@@ -373,7 +429,7 @@ form {
 
 .input-container {
     position: relative;
-    margin: 1rem 0;
+    margin: 1rem 0 20px;
 }
 
 .input {
@@ -416,6 +472,14 @@ textarea.input {
 .input-container.textarea label {
     top: 1rem;
     transform: translateY(0);
+}
+
+.input-container .error {
+    position: absolute;
+    bottom: -28px; /* Ajustez selon vos besoins */
+    left: 0;
+    color: red;
+    font-size: 12px;
 }
 
 .btn {
@@ -584,7 +648,7 @@ textarea.input {
     }
 
     .square {
-        display:none;
+        display: none;
     }
 
     .text {
@@ -595,4 +659,3 @@ textarea.input {
         padding: 1.5rem 0 0 0;
     }
 }
-
