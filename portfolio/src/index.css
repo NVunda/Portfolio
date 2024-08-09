@@ -8,12 +8,11 @@
 }
 
 body {
-  
 }
 
 .header {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     flex-wrap: wrap;
     color: #fff;
     padding: 3% 10% 2% 10%;
@@ -43,13 +42,13 @@ body {
     flex: 0 0 auto;
 }
 
-.sides a {
-    color: #eee
-}
-
-    .sides a:not(.active):hover {
-        opacity: 0.7;
+    .sides a {
+        color: #eee
     }
+
+        .sides a:not(.active):hover {
+            opacity: 0.7;
+        }
 
 .meta {
     font-style: italic;
@@ -58,13 +57,21 @@ body {
 h1 {
     font-size: 3em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
+}
 
 .presentation {
     max-width: 1600px;
     margin: 0 auto;
     text-align: center;
     animation: fadeInTranslate 1s ease-out; /* Appliquer l'animation */
+}
+
+.titre-collection {
+    max-width: 1800px;
+    margin: 0 25px;
+    display: flex;
+    flex-wrap: wrap;
+    animation: fadeInTranslate 0.5s ease-out; /* Appliquer l'animation */
 }
 
 .collection-container {
@@ -75,13 +82,32 @@ h1 {
     animation: fadeInTranslate 0.5s ease-out; /* Appliquer l'animation */
 }
 
-.titre-collection {
-    max-width: 1800px;
-    margin: 0 25px;
-    display: flex;
-    flex-wrap: wrap;
-    animation: fadeInTranslate 0.5s ease-out; /* Appliquer l'animation */
+    .collection-container.portrait {
+        flex-wrap: nowrap; /* Empêche le retour à la ligne */
+        overflow-x: auto; /* Ajoute un défilement horizontal */
+        scrollbar-width: none; /* Masque la barre de défilement pour Firefox */
+    }
+
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
 }
+
+    .scroll-arrow.left {
+        left: 10px;
+    }
+
+    .scroll-arrow.right {
+        right: 10px;
+    }
 
 .video-container {
     display: flex;
@@ -94,9 +120,14 @@ h1 {
     box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.2), 0 10px 30px 0 rgba(255, 255, 255, 0.19); /* Ajout de l'ombre */
 }
 
-    .video-container:hover {
-         animation: survol 1s forwards;
-    }
+.collection-container.portrait .video-container {
+    flex: 0 0 auto; /* Empêche les conteneurs de changer de taille */
+    width: 300px; /* Ajuste la largeur des vidéos en mode portrait */
+}
+
+.video-container:hover {
+    animation: survol 1s forwards;
+}
 
 .video-div {
     display: flex;
@@ -109,15 +140,15 @@ video {
     background-color: black; /*temporaire*/
 }
 
-    .video-div.landscape .video {
-        width: 100%;
-        height: 225px;
-    }
+.video-div.landscape .video {
+    width: 100%;
+    height: 225px;
+}
 
-    .video-div.portrait .video {
-        width: auto;
-        height: 100%;
-    }
+.video-div.portrait .video {
+    width: 100%;
+    height: 300px;
+}
 
 .detail-video {
     height: auto;
@@ -197,7 +228,7 @@ video {
     }
 
     50% {
-        transform: scale(1.05); 
+        transform: scale(1.05);
         box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.4), 0 10px 30px 0 rgba(255, 255, 255, 0.39); /* Ajout de l'ombre */
     }
 
@@ -265,56 +296,56 @@ video {
         animation-name: fadeOut;
     }
 
-    @media screen and (max-width: 600px) {
-        .titre-collection {
-            max-width: 300px;
-            margin: 0 5px;
-        }
-            .onglets {
-            display: none;
-        }
-
-        .dropdown-menu {
-            margin: 75px auto;
-        }
-
-        .video-container {
-            width: 100%;
-            margin : 10px 10px;
-            background-color: aqua;
-        }
-
-        video {
-            height: 200px;
-        }
-
-        .menu-burger {
-            display: block;
-            width: 40px;
-            height: 30px;
-            border: 2px solid #fff;
-            border-radius: 3px;
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            text-decoration: none
-        }
-
-            .menu-burger:after {
-                content: "";
-                display: block;
-                width: 20px;
-                height: 3px;
-                background: #fff;
-                position: absolute;
-                margin: 0 auto;
-                top: 5px;
-                left: 0;
-                right: 0;
-                box-shadow: 0 8px, 0 16px;
-            }
-
+@media screen and (max-width: 600px) {
+    .titre-collection {
+        max-width: 300px;
+        margin: 0 5px;
     }
+
+    .onglets {
+        display: none;
+    }
+
+    .dropdown-menu {
+        margin: 75px auto;
+    }
+
+    .video-container {
+        width: 100%;
+        margin: 10px 10px;
+        background-color: aqua;
+    }
+
+    video {
+        height: 200px;
+    }
+
+    .menu-burger {
+        display: block;
+        width: 40px;
+        height: 30px;
+        border: 2px solid #fff;
+        border-radius: 3px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        text-decoration: none
+    }
+
+        .menu-burger:after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 3px;
+            background: #fff;
+            position: absolute;
+            margin: 0 auto;
+            top: 5px;
+            left: 0;
+            right: 0;
+            box-shadow: 0 8px, 0 16px;
+        }
+}
 
 /*FORMULAIRE DE CONTACT*/
 
@@ -345,16 +376,16 @@ video {
     position: relative;
 }
 
-.contact-form:before {
-    content: "";
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    background-color: #000;
-    transform: rotate(45deg);
-    top: 50px;
-    left: -13px;
-}
+    .contact-form:before {
+        content: "";
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        background-color: #000;
+        transform: rotate(45deg);
+        top: 50px;
+        left: -13px;
+    }
 
 form {
     padding: 2.3rem 2.2rem;
@@ -584,7 +615,7 @@ textarea.input {
     }
 
     .square {
-        display:none;
+        display: none;
     }
 
     .text {
@@ -595,4 +626,3 @@ textarea.input {
         padding: 1.5rem 0 0 0;
     }
 }
-

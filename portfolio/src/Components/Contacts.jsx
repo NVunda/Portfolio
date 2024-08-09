@@ -78,7 +78,7 @@ const Contacts = () => {
 
         if (valid) {
             // Envoyer l'email via EmailJS
-            emailjs.sendForm('service_jvv3sro', 'template_qy557o5', formRef.current, 'YOUR_PUBLIC_KEY')
+            emailjs.sendForm('service_jvv3sro', 'template_qy557o5', formRef.current, 'OlVdqo6_sxXDIUYip')
                 .then((result) => {
                     console.log(result.text);
                     alert('Email envoye avec succes !');
