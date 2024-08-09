@@ -4,11 +4,27 @@ import videoUrlsData from '../assets/data/urlsDivers.json';
 
 const CollectionDivers = () => {
     const [videoUrls, setVideoUrls] = useState([]);
+    const [isOverflowing, setIsOverflowing] = useState(false);
     const containerRef = useRef(null);
 
     useEffect(() => {
         setVideoUrls(videoUrlsData);
     }, []);
+
+    useEffect(() => {
+        const checkOverflow = () => {
+            if (containerRef.current) {
+                setIsOverflowing(containerRef.current.scrollWidth > containerRef.current.clientWidth);
+            }
+        };
+
+        checkOverflow();
+        window.addEventListener('resize', checkOverflow);
+
+        return () => {
+            window.removeEventListener('resize', checkOverflow);
+        };
+    }, [videoUrls]);
 
     const scrollLeft = () => {
         containerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
@@ -51,8 +67,12 @@ const CollectionDivers = () => {
                     )
                 ))}
             </div>
-            <button className="scroll-arrow left" onClick={scrollLeft}>&#9664;</button>
-            <button className="scroll-arrow right" onClick={scrollRight}>&#9654;</button>
+            {isOverflowing && (
+                <>
+                    <button className="scroll-arrow left" onClick={scrollLeft}>&#9664;</button>
+                    <button className="scroll-arrow right" onClick={scrollRight}>&#9654;</button>
+                </>
+            )}
         </div>
     );
 }
