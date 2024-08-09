@@ -8,11 +8,11 @@ const Header = () => {
                 Your browser does not support the video tag.
             </video>
             <div className="header-content">
-                <h4>REALISATEUR/VIDEASTE</h4>
-                <h1>VINCENT KOUTCHAM BOCO</h1>
                 <div className="meta">
                     <a href="#" target="_b" className="author"></a>
                 </div>
+                <h4>REALISATEUR/VIDEASTE</h4>
+                <h1>VINCENT KOUTCHAM BOCO</h1>
             </div>
         </div>
     );

@@ -74,8 +74,8 @@ body {
 
 .author {
     display: inline-block;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     background: url(src/assets/images/author.jpeg) center no-repeat;
     background-size: cover;
