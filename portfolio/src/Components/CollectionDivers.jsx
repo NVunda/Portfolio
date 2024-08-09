@@ -36,7 +36,7 @@ const CollectionDivers = () => {
                     )
                 ))}
             </div>
-            <div className="collection-container landscape" ref={containerRef}>
+            <div className="collection-container landscape">
                 {videoUrls.map(({ url, title, description, miniature, orientation }, index) => (
                     orientation === 'landscape' && (
                         <div key={index} className="video-container">
